@@ -1,18 +1,11 @@
-defmodule IrcRedis do
-  @moduledoc """
-  Documentation for IrcRedis.
-  """
+defmodule IRCRedis do
+  use Application
 
-  @doc """
-  Hello world.
+  def start(_types, _args) do
+    IRCSupervisor.start_link([])
+  end
 
-  ## Examples
-
-      iex> IrcRedis.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def stop(_state) do
+    :ok
   end
 end
