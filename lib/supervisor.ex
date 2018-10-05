@@ -9,6 +9,7 @@ defmodule IRCSupervisor do
     config = Application.get_env(:irc_redis, :general)
     host = Keyword.fetch!(config, :host)
     port = Keyword.fetch!(config, :port)
+
     children = [
       { Redix, host: host, port: port, name: :redix },
       IRCWorker
